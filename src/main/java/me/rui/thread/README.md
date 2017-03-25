@@ -1,4 +1,6 @@
-# CountDownLatch  
+# Thread
+## 1. CountDownLatch
+- Latch.java
 - public CountDownLatch(int count)：构造函数。
 - public void countDown()：Decrements the count of the latch.  
 - public void await() throws InterruptedException:等待。 
