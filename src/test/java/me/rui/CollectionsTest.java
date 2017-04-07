@@ -10,6 +10,12 @@ import static java.util.Arrays.asList;
  * Created by cr on 2017/3/9.
  */
 public class CollectionsTest {
+
+
+    public void scanner() {
+        Scanner scanner = new Scanner(System.in);
+        scanner.next();
+    }
     class Food {
         String name;
 
@@ -69,6 +75,13 @@ public class CollectionsTest {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
     }
 
+
+    public void hahaah2() {
+        int x = 0;
+        int y = 5;
+        if (!(x!=0 && (y/x>0))) System.out.print(1);
+
+    }
 
 
     class Key {
