@@ -40,3 +40,16 @@ ByteBuffer：
 flip方法：将Buffer从写模式切换到读模式。调用flip()方法会将position设回0，并将limit设置成之前position的值。 
 换句话说，position现在用于标记读的位置，limit表示之前写进了多少个byte、char等 —— 现在能读取多少个byte、char等。 
 
+### 三. Netty IO
+
+使用Netty框架搭建网络应用。
+
+1. TCP粘包/拆包问题：在应用层进行解决。
+2. 主流编解码框架：
+    - Google Protobuf; 灵活、跨平台、代码自动生成；
+    - FaceBook Thrift;适用于静态数据交换。
+    - JBoss Marshalling: 兼容Java 序列化。
+3. 自定义了缓冲区——ByteBuf,因为ByteBuffer的局限性：
+- 长度固定，不能动态伸缩；
+- 只有一个标志位置的指针position，读写的时候需要手动调整指针，容易出错；
+- API功能有限，一些高级特性不支持；
