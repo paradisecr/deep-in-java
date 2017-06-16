@@ -1,4 +1,4 @@
-1. HashMap描述
+## 1. HashMap描述
 
 > Hash table based implementation of the Map interface. This implementation provides all of the optional map operations, and permits null values and the null key. (The HashMap class is roughly equivalent to Hashtable, except that it is unsynchronized and permits nulls.) This class makes no guarantees as to the order of the map; in particular, it does not guarantee that the order will remain constant over time.
 
@@ -10,7 +10,7 @@
     - 与插入顺序会不同)
     - 顺序也会随时间变化
 
-2. 重要参数
+重要参数
 
 > - **Initial capacity** The capacity is the number of buckets in the hash table, The initial capacity is simply the capacity at the time the hash table is created.
 > - **Load factor** The load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased.When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.
@@ -31,7 +31,7 @@ Map m = Collections.synchronizedMap(new HashMap(...));
 ```
 迭代器是fail-fast的，在使用迭代器期间，若map发生改变会报ConcurrentModificationException错误；
 
-2. put操作
+## 2. put操作
 
 put的流程：
 1. 对key的hashCode()做hash，然后再计算index;
@@ -115,7 +115,7 @@ the previous value associated with key, or null if there was no mapping for key.
     }    
 ```
 
-3. get操作
+## 3. get操作
 
 get流程：
 1. 计算hash
@@ -151,7 +151,7 @@ get流程：
         return null;
     }
 ```
-4. hash操作
+## 4. hash操作
 
 在对hashCode()计算hash时具体实现是这样的：
 ```
@@ -179,7 +179,7 @@ static final int hash(Object key) {
 
 因此在Java 8中，利用红黑树替换链表，这样复杂度就变成了O(1)+O(logn)了，这样在n很大的时候，能够比较理想的解决这个问题。
 
-5. resize操作
+## 5. resize操作
 
 当put时，如果发现目前的bucket占用程度已经超过了Load Factor所希望的比例，那么就会发生resize。在resize的过程，简单的说就是把bucket扩充为2倍，之后重新计算index，把节点再放到新的bucket中。resize的注释是这样描述的：
 
@@ -274,8 +274,8 @@ static final int hash(Object key) {
         return newTab;
     }
 ```
-6. 参考阅读
+## 6. 参考阅读
 
-- [HashMap的工作原理](http://www.importnew.com/7099.html)
-- [ConurrentHashMap和Hashtable的区别](http://www.importnew.com/7166.html)
+1. [HashMap的工作原理](http://www.importnew.com/7099.html)
+2. [ConurrentHashMap和Hashtable的区别](http://www.importnew.com/7166.html)
 
