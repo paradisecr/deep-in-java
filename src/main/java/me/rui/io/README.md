@@ -37,8 +37,10 @@ ByteBuffer：
 - position：下一个可读/可写的位置。
 - limit：读取/写入的指针限制(写时为capacity,读时为上一次写入的position)
 
-flip方法：将Buffer从写模式切换到读模式。调用flip()方法会将position设回0，并将limit设置成之前position的值。 
-换句话说，position现在用于标记读的位置，limit表示之前写进了多少个byte、char等 —— 现在能读取多少个byte、char等。 
+flip()方法：将Buffer从写模式切换到读模式。调用flip()方法会将position设回0，并将limit设置成之前position的值。 
+换句话说，position现在用于标记读的位置，limit表示之前写进了多少个byte、char等 —— 现在能读取多少个byte、char等。
+
+flip()可读，clear()可写。
 
 ### 三. Netty IO
 
